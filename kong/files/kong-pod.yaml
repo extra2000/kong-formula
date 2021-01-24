@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kong-pod
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: kong
+    image: {{ image.name }}
+    command: ['kong', 'docker-start']
+    resources:
+      requests:
+        memory: {{ resources.requests.memory }}
+      limits:
+        memory: {{ resources.limits.memory }}
+    ports:
+    - containerPort: {{ port.http.container }}
+      hostPort: {{ port.http.host }}
+      hostIP: {{ port.http.ip }}
+      protocol: tcp
+    - containerPort: {{ port.https.container }}
+      hostPort: {{ port.https.host }}
+      hostIP: {{ port.https.ip }}
+      protocol: tcp
+    - containerPort: {{ port.admin_http.container }}
+      hostPort: {{ port.admin_http.host }}
+      hostIP: {{ port.admin_http.ip }}
+      protocol: tcp
+    - containerPort: {{ port.admin_https.container }}
+      hostPort: {{ port.admin_https.host }}
+      hostIP: {{ port.admin_https.ip }}
+      protocol: tcp
+    volumeMounts:
+    - mountPath: /etc/kong/kong.conf
+      name: kongconf
+      readOnly: true
+  volumes:
+  - name: kongconf
+    hostPath:
+      path: /opt/kong/kong.conf
