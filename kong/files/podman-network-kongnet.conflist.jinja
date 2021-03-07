@@ -4,7 +4,7 @@
   "plugins": [
     {
       "type": "bridge",
-      "bridge": "cni-podman0",
+      "bridge": "{{ pod.network.bridge }}",
       "isGateway": true,
       "ipMasq": true,
       "hairpinMode": true,
