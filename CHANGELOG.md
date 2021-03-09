@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.0.1](https://github.com/extra2000/kong-formula/compare/v1.0.0...v1.0.1) (2021-03-09)
+
+
+### Fixes
+
+* **network:** Make `bridge` customizable to prevent pod networking conflicts ([eb2059b](https://github.com/extra2000/kong-formula/commit/eb2059b16cccaf4b108cded29b2253e568fe121c))
+* **pods:** Remove Podman 2.x workarounds ([bad5dcd](https://github.com/extra2000/kong-formula/commit/bad5dcdf302bd48585313e9bc3058b381ed4e5da))
+
 ## 1.0.0 (2021-01-24)
 
 
