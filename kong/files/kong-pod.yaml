@@ -7,7 +7,6 @@ spec:
   containers:
   - name: kong
     image: {{ image.name }}
-    command: ['kong', 'docker-start']
     resources:
       requests:
         memory: {{ resources.requests.memory }}

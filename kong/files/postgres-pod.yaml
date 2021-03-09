@@ -7,7 +7,6 @@ spec:
   containers:
   - name: postgres
     image: {{ postgres.image.name }}
-    command: ['postgres']
     resources:
       requests:
         memory: {{ postgres.resources.requests.memory }}
@@ -17,8 +16,6 @@ spec:
     - containerPort: {{ postgres.port }}
       protocol: tcp
     env:
-    - name: PGDATA
-      value: /var/lib/postgresql/data
     - name: POSTGRES_PASSWORD
       value: {{ postgres.password }}
     volumeMounts:
