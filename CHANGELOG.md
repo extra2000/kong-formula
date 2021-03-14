@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.0.2](https://github.com/extra2000/kong-formula/compare/v1.0.1...v1.0.2) (2021-03-14)
+
+
+### Code Refactoring
+
+* **defaults.yaml:** Rename postgres image from `docker.io/postgres:13.1-alpine` to `docker.io/library/postgres:13.1-alpine` ([8a9d1d9](https://github.com/extra2000/kong-formula/commit/8a9d1d93e8a4bd691a8cc52600686c3b5c212fc8))
+* **pods:** Explicitly define `capabilities` ([a3d6325](https://github.com/extra2000/kong-formula/commit/a3d6325ec9b7cd9b53c4be428e72af6bb0535481))
+* **service:** Rename state from `dead` to `destroy` ([8df36c0](https://github.com/extra2000/kong-formula/commit/8df36c0d49471bba9f0e365ef33841154b56f19a))
+
+
+### Fixes
+
+* **service:** Ensure images are successfully pulled and destroy existing pods before deploying new pods ([f22613f](https://github.com/extra2000/kong-formula/commit/f22613f52226be7620a731b66d308cc562e7469d))
+
+
+### Documentations
+
+* **README:** Change `dead` to `destroy` ([99d1809](https://github.com/extra2000/kong-formula/commit/99d1809960cd7d857359a0a1782cae912e925f82))
+
 ### [1.0.1](https://github.com/extra2000/kong-formula/compare/v1.0.0...v1.0.1) (2021-03-09)
 
 
