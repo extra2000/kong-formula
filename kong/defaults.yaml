@@ -33,7 +33,7 @@ kong:
   database:
     postgres:
       image:
-        name: docker.io/postgres:13.1-alpine
+        name: docker.io/library/postgres:13.1-alpine
       user: kong
       password: abcde12345
       dbname: kongdb
