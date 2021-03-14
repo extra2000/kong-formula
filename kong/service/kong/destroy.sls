@@ -4,7 +4,7 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import KONG with context %}
 
-kong-container-dead:
+kong-pod-dead:
   cmd.run:
     - name: podman pod rm --force kong-pod
     - runas: {{ KONG.hostuser.name }}
