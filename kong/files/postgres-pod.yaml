@@ -7,6 +7,16 @@ spec:
   containers:
   - name: postgres
     image: {{ postgres.image.name }}
+    securityContext:
+      allowPrivilegeEscalation: false
+      privileged: false
+      capabilities:
+        add: []
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+      seLinuxOptions: {}
     resources:
       requests:
         memory: {{ postgres.resources.requests.memory }}
