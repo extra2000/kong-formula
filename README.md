@@ -13,6 +13,6 @@ SaltStack Formula for [Kong API Gateway](https://github.com/Kong/kong).
 | ------ | ------------ |
 | `kong.config` | Transfer source files and configure. |
 | `kong.service.postgres` | Deploy Postgres pod. |
-| `kong.service.postgres.dead` | Destroy Postgres pod. |
+| `kong.service.postgres.destroy` | Destroy Postgres pod. |
 | `kong.service.kong` | Deploy Kong pod. |
-| `kong.service.kong.dead` | Destroy Kong pod. |
+| `kong.service.kong.destroy` | Destroy Kong pod. |
