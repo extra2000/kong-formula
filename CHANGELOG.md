@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/extra2000/kong-formula/compare/v1.0.2...v1.1.0) (2021-03-16)
+
+
+### Features
+
+* **network:** Add option to use host networking mode ([eafbdeb](https://github.com/extra2000/kong-formula/commit/eafbdeb9a55282672b7f6fbfc0d74a6e1ec11277))
+
 ### [1.0.2](https://github.com/extra2000/kong-formula/compare/v1.0.1...v1.0.2) (2021-03-14)
 
 
