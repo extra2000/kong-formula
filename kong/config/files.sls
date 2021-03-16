@@ -31,6 +31,7 @@
     - group: {{ KONG.hostuser.group }}
     - template: jinja
     - context:
+      kong: {{ KONG }}
       image: {{ KONG.image }}
       resources: {{ KONG.resources }}
       port: {{ KONG.port }}
@@ -42,6 +43,7 @@
     - group: {{ KONG.hostuser.group }}
     - template: jinja
     - context:
+      kong: {{ KONG }}
       postgres: {{ KONG.database.postgres }}
 
 /opt/kong/kong.conf:
@@ -51,6 +53,7 @@
     - group: {{ KONG.hostuser.group }}
     - template: jinja
     - context:
+      kong: {{ KONG }}
       domain_name: {{ KONG.pod.network.domain_name }}
       postgres: {{ KONG.database.postgres }}
 

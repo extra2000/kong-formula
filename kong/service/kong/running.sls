@@ -21,7 +21,11 @@ kong-pod-destroy-if-exists:
 
 kong-pod-running:
   cmd.run:
+    {% if KONG.host_network %}
+    - name: podman play kube kong-pod.yaml
+    {% else %}
     - name: podman play kube --network=kongnet kong-pod.yaml
+    {% endif %}
     - cwd: /opt/kong
     - runas: {{ KONG.hostuser.name }}
     - require:

@@ -24,6 +24,10 @@ spec:
         memory: {{ postgres.resources.limits.memory }}
     ports:
     - containerPort: {{ postgres.port }}
+      {% if kong.host_network %}
+      hostPort: {{ postgres.port }}
+      hostIP: 127.0.0.1
+      {% endif %}
       protocol: tcp
     env:
     - name: POSTGRES_PASSWORD
